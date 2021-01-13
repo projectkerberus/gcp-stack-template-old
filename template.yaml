@@ -14,9 +14,19 @@ spec:
   path: '.'
   schema:
     required:
+      - component_id
+      - description
       - nodes-count 
       - nodes-size 
     properties:
+      component_id:
+        title: Name
+        type: string
+        description: Unique name of the component
+      description:
+        title: Description
+        type: string
+        description: Help others understand what this service does.
       nodes-count:
         title: Number of nodes of the GKE cluster
         type: integer
