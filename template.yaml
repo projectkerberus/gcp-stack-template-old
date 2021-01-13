@@ -8,7 +8,7 @@ metadata:
     - gcp
     - gke
 spec:
-  owner: diego.braga@kiratech.it
+  owner: diego.braga86@gmail.com
   templater: cookiecutter
   type: service
   path: '.'
