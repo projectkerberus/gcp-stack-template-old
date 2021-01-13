@@ -14,19 +14,15 @@ spec:
   path: '.'
   schema:
     required:
-      - component_id
-      - description
+      - nodes-count 
+      - nodes-size 
     properties:
-      component_id:
-        title: Name
-        type: string
-        description: Unique name of the component
-      description:
-        title: Description
-        type: string
-        description: Help others understand what this service does.
-      http_port:
-        title: Port
+      nodes-count:
+        title: Number of nodes of the GKE cluster
         type: integer
-        default: 8080
-        description: The port to run the gRPC service on
+        description: Number of nodes of the GKE cluster 
+      nodes-size:
+        title: Size of nodes of the GKE cluster 
+        type: integer
+        default: 3
+        description: Size of nodes of the GKE cluster
