@@ -9,8 +9,8 @@ spec:
   id: multik8s-cluster
   parameters:
     nodes:
-      count: {{cookiecutter.nodes-count | jsonify}}
-      size: {{cookiecutter.nodes-size | jsonify}}  
+      count: {{cookiecutter.nodes_count | jsonify}}
+      size: {{cookiecutter.nodes_size | jsonify}}  
     services:
       operators:
         prometheus:
