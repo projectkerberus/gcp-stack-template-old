@@ -6,6 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: {{cookiecutter.storePath | jsonify}}
     backstage.io/techdocs-ref: github:https://github.com/{{cookiecutter.storePath}}
+    argocd/app-name: {{cookiecutter.component_id | jsonify}}
 spec:
   type: service
   lifecycle: experimental
