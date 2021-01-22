@@ -22,7 +22,7 @@ jobs:
               "spec": {
                   "source": {
                       "repoURL": "{{cookiecutter.storePath}}",
-                      "path": "/charts/"
+                      "path": "charts/"
                   },
                   "destination": {
                       "namespace": "example-v1",
