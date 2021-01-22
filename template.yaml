@@ -16,8 +16,8 @@ spec:
     required:
       - component_id
       - description
-      - nodes_count 
-      - nodes_size 
+      - networkRef
+      - clusterRef
     properties:
       component_id:
         title: Name
@@ -27,12 +27,11 @@ spec:
         title: Description
         type: string
         description: Help others understand what this service does.
-      nodes_count:
-        title: Number of nodes of the GKE cluster
-        type: integer
-        description: Number of nodes of the GKE cluster 
-      nodes_size:
-        title: Size of nodes of the GKE cluster 
-        type: integer
-        default: 3
-        description: Size of nodes of the GKE cluster
+      networkRef:
+        title: Network identifier
+        type: string
+        description: Network identifier
+      clusterRef:
+        title: Cluster identifier
+        type: string
+        description: Cluster identifier
