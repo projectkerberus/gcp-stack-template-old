@@ -18,6 +18,7 @@ spec:
       - description
       - networkRef
       - clusterRef
+      - clusterNodesCount
     properties:
       component_id:
         title: Name
@@ -35,3 +36,7 @@ spec:
         title: Cluster identifier
         type: string
         description: Cluster identifier
+      clusterNodesCount:
+        title: Number of nodes of the cluster per region
+        type: integer
+        description: Number of nodes of the cluster per region
