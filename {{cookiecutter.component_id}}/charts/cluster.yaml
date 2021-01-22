@@ -9,7 +9,7 @@ spec:
   id: {{cookiecutter.clusterRef}}
   parameters:
     nodes:
-      count: 1
+      count: {{cookiecutter.clusterNodesCount}}
       size: small
     services:
       operators:
