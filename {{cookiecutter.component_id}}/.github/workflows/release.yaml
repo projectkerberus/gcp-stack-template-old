@@ -17,7 +17,7 @@ jobs:
           --header 'Cookie: argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTEzMTQyNTUuMzg5NjYyLCJpc3MiOiJhcmdvY2QiLCJuYmYiOjE2MTEzMTQyNTUuMzg5NjYyLCJzdWIiOiJhZG1pbiJ9.KtqJnn7ZvOdqX9BnD-pN2CXm4M63HC-rGw8lf57sqNs' \
           --data-raw '{
               "metadata": {
-                  "name": "example-v1"
+                  "name": "{{cookiecutter.component_id | jsonify}}"
               },
               "spec": {
                   "source": {
