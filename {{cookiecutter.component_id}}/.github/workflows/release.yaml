@@ -28,5 +28,10 @@ jobs:
                       "namespace": "example-v1",
                       "server": "https://lokomotive-cluster.projectx.kiratech.biz:6443"
                   }
+                  "syncPolicy": {
+                      "syncOptions": [
+                          "CreateNamespace=true"
+                      ]
+                  }
               }
           }'
