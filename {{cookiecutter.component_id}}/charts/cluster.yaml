@@ -1,12 +1,12 @@
 apiVersion: gcp.platformref.crossplane.io/v1alpha1
 kind: Cluster
 metadata:
-  name: platform-ref-gcp-cluster
+  name: {{cookiecutter.clusterRef}}
 spec:
   compositionSelector:
     matchLabels:
       provider: GCP
-  id: platform-ref-gcp-cluster
+  id: {{cookiecutter.clusterRef}}
   parameters:
     nodes:
       count: 1
@@ -16,6 +16,6 @@ spec:
         prometheus:
           version: "10.0.2"
     networkRef:
-      id: platform-ref-gcp-network
+      id: {{cookiecutter.networkRef}}
   writeConnectionSecretToRef:
     name: cluster-conn
