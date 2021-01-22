@@ -1,0 +1,32 @@
+name: Release Charts
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create ArgoCD application
+        run: |
+          curl -v -k --location \
+          --request POST 'https://argocd.projectx.kiratech.biz/api/v1/applications' \
+          --header 'Content-Type: application/json' \
+          --header 'Cookie: argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTEzMTQyNTUuMzg5NjYyLCJpc3MiOiJhcmdvY2QiLCJuYmYiOjE2MTEzMTQyNTUuMzg5NjYyLCJzdWIiOiJhZG1pbiJ9.KtqJnn7ZvOdqX9BnD-pN2CXm4M63HC-rGw8lf57sqNs' \
+          --data-raw '{
+              "metadata": {
+                  "name": "example-v1"
+              },
+              "spec": {
+                  "source": {
+                      "repoURL": "{{cookiecutter.destination.git.owner + "/" + cookiecutter.destination.git.name}}",
+                      "path": "/charts/"
+                  },
+                  "destination": {
+                      "namespace": "example-v1",
+                      "server": "https://lokomotive-cluster.projectx.kiratech.biz:6443"
+                  }
+              }
+          }'
