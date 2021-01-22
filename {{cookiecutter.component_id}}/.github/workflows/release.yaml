@@ -21,7 +21,7 @@ jobs:
               },
               "spec": {
                   "source": {
-                      "repoURL": "{{cookiecutter.destination.git.owner + "/" + cookiecutter.destination.git.name}}",
+                      "repoURL": "{{cookiecutter.storePath}}",
                       "path": "/charts/"
                   },
                   "destination": {
