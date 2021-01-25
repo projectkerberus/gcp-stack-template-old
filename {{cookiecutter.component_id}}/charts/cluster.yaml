@@ -2,6 +2,8 @@ apiVersion: gcp.platformref.crossplane.io/v1alpha1
 kind: Cluster
 metadata:
   name: {{cookiecutter.clusterRef}}
+  label:
+    backstage.io/kubernetes-id: {{cookiecutter.component_id}}
 spec:
   compositionSelector:
     matchLabels:
