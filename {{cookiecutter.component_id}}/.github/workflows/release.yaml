@@ -11,10 +11,10 @@ jobs:
     steps:
       - name: Create ArgoCD application
         run: |
-          curl -v -k --location \
+          curl -v -k --fail --location \
           --request POST 'https://argocd.projectx.kiratech.biz/api/v1/applications' \
           --header 'Content-Type: application/json' \
-          --header 'Cookie: argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTEzMTQyNTUuMzg5NjYyLCJpc3MiOiJhcmdvY2QiLCJuYmYiOjE2MTEzMTQyNTUuMzg5NjYyLCJzdWIiOiJhZG1pbiJ9.KtqJnn7ZvOdqX9BnD-pN2CXm4M63HC-rGw8lf57sqNs' \
+          --header 'Cookie: argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0MzhjYmI3Mi01ZWUyLTRjMTEtOTAyNi1kNWYyMjY1ZDkwMDUiLCJpYXQiOjE2MTE5NDM3ODIsImlzcyI6ImFyZ29jZCIsIm5iZiI6MTYxMTk0Mzc4Miwic3ViIjoiYmFja3N0YWdlIn0._nXky3Oa430uB8AOYLbfZJyPvYMZOonBk-rFRgcxo9k' \
           --data-raw '{
               "metadata": {
                   "name": "{{cookiecutter.component_id}}"
