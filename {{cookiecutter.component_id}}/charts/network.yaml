@@ -2,7 +2,7 @@ apiVersion: gcp.platformref.crossplane.io/v1alpha1
 kind: Network
 metadata:
   name: {{cookiecutter.networkRef}}
-  label:
+  labels:
     backstage.io/kubernetes-id: {{cookiecutter.component_id}}
 spec:
   id: {{cookiecutter.networkRef}}
