@@ -1,0 +1,17 @@
+apiVersion: database.gcp.crossplane.io/v1beta1
+kind: CloudSQLInstance
+metadata:
+  name: {{cookiecutter.cloudSqlRef}}
+  label:
+    backstage.io/kubernetes-id: {{cookiecutter.component_id}}
+spec:
+  forProvider:
+    databaseVersion: {{cookiecutter.cloudSqlDatabaseVersion}}
+    region: {{cookiecutter.cloudSqlRegion}}
+    settings:
+      tier: db-custom-1-3840 {{cookiecutter.cloudSqlTier}}
+      dataDiskType: PD_SSD {{cookiecutter.cloudSqlDataDiskType}}
+      dataDiskSizeGb: 10 {{cookiecutter.cloudSqlDataDiskSizeGb}}
+  writeConnectionSecretToRef:
+    namespace: crossplane-system
+    name: cloudsqlpostgresql-conn
