@@ -14,7 +14,7 @@ jobs:
           curl -v -k --fail --location \
           --request POST 'https://argocd.projectx.kiratech.biz/api/v1/applications' \
           --header 'Content-Type: application/json' \
-          --header 'Cookie: argocd.token=yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0ZDY0M2YyOC0yYTIyLTQzZDQtYjZlNy05MmU2OTE2ODJhYTQiLCJpYXQiOjE2MTIzNTAxNDIsImlzcyI6ImFyZ29jZCIsIm5iZiI6MTYxMjM1MDE0Miwic3ViIjoiYmFja3N0YWdlIn0.WCBd6ENUz0ubOQES4urJ5I1UeV3FAPn9Alo3lflHZww' \
+          --header 'Cookie: argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5MDE1Zjk3Zi1iZGRjLTQ3ZDYtYmIxMS1lNjVhMmViODA0NWMiLCJpYXQiOjE2MTIzNTc4NjAsImlzcyI6ImFyZ29jZCIsIm5iZiI6MTYxMjM1Nzg2MCwic3ViIjoiYmFja3N0YWdlIn0.aebO2zwmgAcHPCFdf6WuC_MdxCtOIxVPOZvzBCeOIYA' \
           --data-raw '{
               "metadata": {
                   "name": "{{cookiecutter.component_id}}"
@@ -33,8 +33,9 @@ jobs:
                           "CreateNamespace=true"
                       ],
                       "automated": {
-                          "prune": true,
-                          "selfHeal": true
+                          "allowEmpty": true,
+                          "prune": false,
+                          "selfHeal": false
                       }
                   }
               }
