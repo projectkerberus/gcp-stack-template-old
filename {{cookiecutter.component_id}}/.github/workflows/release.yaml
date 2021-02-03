@@ -26,7 +26,7 @@ jobs:
                   },
                   "destination": {
                       "namespace": "{{cookiecutter.component_id}}",
-                      "server": "https://lokomotive-cluster.projectx.kiratech.biz:6443"
+                      "server": "https://lokomotive.projectx.kiratech.biz:6443"
                   },
                   "syncPolicy": {
                       "syncOptions": [
