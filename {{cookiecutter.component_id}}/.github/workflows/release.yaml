@@ -14,7 +14,7 @@ jobs:
           curl -v -k --fail --location \
           --request POST 'https://argocd.projectx.kiratech.biz/api/v1/applications' \
           --header 'Content-Type: application/json' \
-          --header 'Cookie: argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5MDE1Zjk3Zi1iZGRjLTQ3ZDYtYmIxMS1lNjVhMmViODA0NWMiLCJpYXQiOjE2MTIzNTc4NjAsImlzcyI6ImFyZ29jZCIsIm5iZiI6MTYxMjM1Nzg2MCwic3ViIjoiYmFja3N0YWdlIn0.aebO2zwmgAcHPCFdf6WuC_MdxCtOIxVPOZvzBCeOIYA' \
+          --header 'Cookie: argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJiYjRiYmRmOS01NDNmLTQ3ODAtYTE1My1mMDY5NDRhZjkyOTQiLCJpYXQiOjE2MTMwNTg0NzcsImlzcyI6ImFyZ29jZCIsIm5iZiI6MTYxMzA1ODQ3Nywic3ViIjoiYmFja3N0YWdlIn0.CJIim9lrc172eSV_Wf4LGqvoh1ODG37Nsbs3mXt7XGk' \
           --data-raw '{
               "metadata": {
                   "name": "{{cookiecutter.component_id}}"
