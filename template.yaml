@@ -70,3 +70,15 @@ spec:
         type: integer
         description: Cloud SQL data disk size (GB)
         default: 10
+      argocd_url:
+        title: HTTPS url of ArgoCD
+        type: string
+        description: HTTPS url of ArgoCD
+      argocd_token:
+        title: token for ArgoCD authentication
+        type: string
+        description: token for ArgoCD authentication
+      k8s_apiserver_url:
+        title: API Server URL of the Kubernetes cluster for Kerberus
+        type: string
+        description: API Server URL of the Kubernetes cluster for Kerberus
