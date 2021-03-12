@@ -7,4 +7,4 @@ This template allows the user to request on a GCP project the following infrastr
 
 # Requirements
 
-- [Setup of the Kerberus Platform] (https://github.com/projectkerberus/kerberus-platform/blob/main/INSTALL.md)
+- [Setup of the Kerberus Platform](https://github.com/projectkerberus/kerberus-platform/blob/main/INSTALL.md)
