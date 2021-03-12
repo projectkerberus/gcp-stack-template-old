@@ -12,9 +12,9 @@ jobs:
       - name: Create ArgoCD application
         run: |
           curl -v -k --fail --location \
-          --request POST 'https://argocd.projectx.kiratech.biz/api/v1/applications' \
+          --request POST '{{cookiecutter.argocd_url}}' \
           --header 'Content-Type: application/json' \
-          --header 'Cookie: argocd.token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3MGYzYTUzZC0zOThiLTQwOTktYjc4NC0wMWE4ZTBkNzliYjgiLCJpYXQiOjE2MTQxNzIzNDgsImlzcyI6ImFyZ29jZCIsIm5iZiI6MTYxNDE3MjM0OCwic3ViIjoiYmFja3N0YWdlIn0.w2VWyDm__YHG8JFcgEkotCQWj9OpvBpHIHwa9L5oogA' \
+          --header 'Cookie: argocd.token={{cookiecutter.argocd_token}}' \
           --data-raw '{
               "metadata": {
                   "name": "{{cookiecutter.component_id}}"
@@ -26,7 +26,7 @@ jobs:
                   },
                   "destination": {
                       "namespace": "{{cookiecutter.component_id}}",
-                      "server": "https://lokomotive.projectx.kiratech.biz:6443"
+                      "server": "{{cookiecutter.k8s_apiserver_url}}"
                   },
                   "syncPolicy": {
                       "syncOptions": [
