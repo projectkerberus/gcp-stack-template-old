@@ -10,6 +10,4 @@ spec:
     id: {{cookiecutter.clusterRef}}
   compositionSelector:
     matchLabels:
-      provider: GCP
-  providerConfigRef:
-    name: gcp-stack-template-provider
+      provider: gcp-stack-template-provider
