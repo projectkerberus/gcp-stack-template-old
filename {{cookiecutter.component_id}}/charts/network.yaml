@@ -11,3 +11,5 @@ spec:
   compositionSelector:
     matchLabels:
       provider: GCP
+  providerConfigRef:
+    name: gcp-stack-template-provider
