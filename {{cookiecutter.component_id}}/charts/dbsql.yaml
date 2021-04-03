@@ -15,3 +15,5 @@ spec:
   writeConnectionSecretToRef:
     namespace: crossplane-system
     name: cloudsqlpostgresql-conn
+  providerConfigRef:
+    name: gcp-stack-template-provider
