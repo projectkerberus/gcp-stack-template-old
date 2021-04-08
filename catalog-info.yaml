@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: gcp-stack-template
+  annotations:
+    github.com/project-slug: braghettos/gcp-stack-template
+spec:
+  type: other
+  lifecycle: unknown
+  owner: braghettos
