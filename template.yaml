@@ -19,6 +19,16 @@ spec:
       - networkRef
       - clusterRef
       - clusterNodesCount
+      - cloudSqlRef
+      - cloudSqlDatabaseVersion
+      - cloudSqlRegion
+      - cloudSqlTier
+      - cloudSqlDataDiskType
+      - cloudSqlDataDiskSizeGb
+      - argocd_url
+      - argocd_token
+      - k8s_apiserver_url
+      - gcpProject
     properties:
       component_id:
         title: Name
@@ -82,3 +92,7 @@ spec:
         title: API Server URL of the Kubernetes cluster for Kerberus
         type: string
         description: API Server URL of the Kubernetes cluster for Kerberus
+      gcpProject:
+        title: Google Project ID where resources will be created
+        type: string
+        description: Google Project ID where resources will be created
