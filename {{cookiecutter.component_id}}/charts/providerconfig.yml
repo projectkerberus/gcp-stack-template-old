@@ -4,7 +4,7 @@ metadata:
   name: gcp-stack-template-provider
 spec:
   # replace this with your own gcp project id
-  projectID: ${var.GCP_PROJECT}
+  projectID: {{cookiecutter.gcpProject}}
   credentials:
     source: Secret
     secretRef:
