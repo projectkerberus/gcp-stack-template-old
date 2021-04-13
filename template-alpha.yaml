@@ -1,0 +1,98 @@
+apiVersion: backstage.io/v1alpha1
+kind: Template
+metadata:
+  name: gcp-template
+  title: Google Cloud Platform infrastructure template
+  description: Create a simple GCP stack
+  tags:
+    - gcp
+    - gke
+spec:
+  owner: diego.braga86@gmail.com
+  templater: cookiecutter
+  type: service
+  path: '.'
+  schema:
+    required:
+      - component_id
+      - description
+      - networkRef
+      - clusterRef
+      - clusterNodesCount
+      - cloudSqlRef
+      - cloudSqlDatabaseVersion
+      - cloudSqlRegion
+      - cloudSqlTier
+      - cloudSqlDataDiskType
+      - cloudSqlDataDiskSizeGb
+      - argocd_url
+      - argocd_token
+      - k8s_apiserver_url
+      - gcpProject
+    properties:
+      component_id:
+        title: Name
+        type: string
+        description: Unique name of the component
+      description:
+        title: Description
+        type: string
+        description: Help others understand what this service does.
+      networkRef:
+        title: Network identifier
+        type: string
+        description: Network identifier
+      clusterRef:
+        title: Cluster identifier
+        type: string
+        description: Cluster identifier
+      clusterNodesCount:
+        title: Number of nodes of the cluster per region
+        type: integer
+        description: Number of nodes of the cluster per region
+        default: 2
+      cloudSqlRef:
+        title: Cloud SQL identifier
+        type: string
+        description: Cloud SQL identifier
+      cloudSqlDatabaseVersion:
+        title: Cloud SQL Database version
+        type: string
+        description: Cloud SQL Database version
+        default: POSTGRES_9_6
+      cloudSqlRegion:
+        title: Cloud SQL region
+        type: string
+        description: Cloud SQL region
+        default: europe-west3
+      cloudSqlTier:
+        title: Cloud SQL tier
+        type: string
+        description: Cloud SQL tier
+        default: db-custom-1-3840
+      cloudSqlDataDiskType:
+        title: Cloud SQL data disk type
+        type: string
+        description: Cloud SQL data disk type
+        default: PD_SSD
+      cloudSqlDataDiskSizeGb:
+        title: Cloud SQL data disk size (GB)
+        type: integer
+        description: Cloud SQL data disk size (GB)
+        default: 10
+      argocd_url:
+        title: HTTPS url of ArgoCD
+        type: string
+        description: HTTPS url of ArgoCD
+      argocd_token:
+        title: token for ArgoCD authentication
+        type: string
+        description: token for ArgoCD authentication
+      k8s_apiserver_url:
+        title: API Server URL of the Kubernetes cluster for Kerberus
+        type: string
+        description: API Server URL of the Kubernetes cluster for Kerberus
+      gcpProject:
+        title: Google Project ID where resources will be created
+        type: string
+        description: Google Project ID where resources will be created
