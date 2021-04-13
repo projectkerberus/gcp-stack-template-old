@@ -135,7 +135,8 @@ spec:
           k8s_apiserver_url: '{{ parameters.k8s_apiserver_url }}'
           gcpProject: '{{ parameters.gcpProject }}'
 
-    - name: Publish
+    - id: publish
+      name: Publish
       action: publish:github
       input:
         allowedHosts: ['github.com']
