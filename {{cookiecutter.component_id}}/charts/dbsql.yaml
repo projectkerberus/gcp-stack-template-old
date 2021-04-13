@@ -16,4 +16,4 @@ spec:
     namespace: crossplane-system
     name: cloudsqlpostgresql-conn
   providerConfigRef:
-    name: gcp-stack-template-provider
+    name: gcp-stack-template-provider-{{cookiecutter.gcpProject}}

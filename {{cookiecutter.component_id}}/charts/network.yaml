@@ -1,13 +1,37 @@
-apiVersion: gcp.platformref.crossplane.io/v1alpha1
+---
+apiVersion: compute.gcp.crossplane.io/v1beta1
 kind: Network
 metadata:
-  name: {{cookiecutter.networkRef}}
+  name: {{cookiecutter.networkRef}} 
   labels:
     backstage.io/kubernetes-id: {{cookiecutter.component_id}}
 spec:
-  id: {{cookiecutter.networkRef}}
-  clusterRef:
-    id: {{cookiecutter.clusterRef}}
-  compositionSelector:
-    matchLabels:
-      provider: gcp-stack-template-provider
+  forProvider:
+    autoCreateSubnetworks: false
+    routingConfig:
+      routingMode: REGIONAL
+  reclaimPolicy: Delete
+  providerConfigRef:
+    name: gcp-stack-template-provider-{{cookiecutter.gcpProject}}
+---
+apiVersion: compute.gcp.crossplane.io/v1beta1
+kind: Subnetwork
+metadata:
+  name: {{cookiecutter.networkRef}}-sn 
+  labels:
+    backstage.io/kubernetes-id: {{cookiecutter.component_id}}
+spec:
+  forProvider:
+    region: us-central1
+    ipCidrRange: "192.168.0.0/24"
+    privateIpGoogleAccess: true
+    secondaryIpRanges:
+      - rangeName: pods
+        ipCidrRange: 10.128.0.0/20
+      - rangeName: services
+        ipCidrRange: 172.16.0.0/16
+    networkRef:
+      name: example
+  reclaimPolicy: Delete
+  providerConfigRef:
+    name: gcp-stack-template-provider-{{cookiecutter.gcpProject}}
