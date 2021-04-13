@@ -10,7 +10,6 @@ spec:
     autoCreateSubnetworks: false
     routingConfig:
       routingMode: REGIONAL
-  reclaimPolicy: Delete
   providerConfigRef:
     name: gcp-stack-template-provider-{{cookiecutter.gcpProject}}
 ---
@@ -31,7 +30,6 @@ spec:
       - rangeName: services
         ipCidrRange: 172.16.0.0/16
     networkRef:
-      name: example
-  reclaimPolicy: Delete
+      name: {{cookiecutter.networkRef}}
   providerConfigRef:
     name: gcp-stack-template-provider-{{cookiecutter.gcpProject}}
