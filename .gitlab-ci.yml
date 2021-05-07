@@ -1,0 +1,31 @@
+create-argocd-application:
+    script: |
+          curl -v -k --fail --location \
+          --request POST '{{cookiecutter.argocd_url}}/api/v1/applications' \
+          --header 'Content-Type: application/json' \
+          --header 'Cookie: argocd.token={{cookiecutter.argocd_token}}' \
+          --data-raw '{
+              "metadata": {
+                  "name": "{{cookiecutter.component_id}}"
+              },
+              "spec": {
+                  "source": {
+                      "repoURL": "{{cookiecutter.storePath}}",
+                      "path": "charts/"
+                  },
+                  "destination": {
+                      "namespace": "{{cookiecutter.component_id}}",
+                      "server": "{{cookiecutter.k8s_apiserver_url}}"
+                  },
+                  "syncPolicy": {
+                      "syncOptions": [
+                          "CreateNamespace=true"
+                      ],
+                      "automated": {
+                          "allowEmpty": true,
+                          "prune": false,
+                          "selfHeal": false
+                      }
+                  }
+              }
+          }'
