@@ -27,7 +27,6 @@ spec:
       - cloudSqlDataDiskSizeGb
       - argocd_url
       - argocd_token
-      - k8s_apiserver_url
       - gcpProject
     properties:
       component_id:
@@ -88,11 +87,6 @@ spec:
         title: token for ArgoCD authentication
         type: string
         description: token for ArgoCD authentication
-      k8s_apiserver_url:
-        title: API Server URL of the Kubernetes cluster for Kerberus
-        type: string
-        description: API Server URL of the Kubernetes cluster for Kerberus
-        default: https://kubernetes.default.svc
       gcpProject:
         title: Google Project ID where resources will be created
         type: string
