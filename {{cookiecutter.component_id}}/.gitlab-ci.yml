@@ -15,7 +15,7 @@ create-argocd-application:
                   },
                   "destination": {
                       "namespace": "{{cookiecutter.component_id}}",
-                      "server": "{{cookiecutter.k8s_apiserver_url}}"
+                      "server": "https://kubernetes.default.svc"
                   },
                   "syncPolicy": {
                       "syncOptions": [
